@@ -3,12 +3,12 @@
 Control NAD C356BEE through RS232 from Home Assistant (HA) using ESPHome and a Wemos D1. The ESPhome configuration exposes the following entities to HA:
 
 - Power
-- Souce (AUX, CD, ...)
+- Source (AUX, CD, ...)
 - Mute
 - Speaker A/B
 - Volume increment and decrement
 
-The entities are queryed during startup and will automatically be updated based on the information received from the amplifier.
+The entities are queried during startup and will automatically be updated based on the information received from the amplifier.
 Volume entities are state-less and therefore configured as buttons compared to the other entities which are configured as switches.
 
 ## Resources
