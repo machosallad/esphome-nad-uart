@@ -3,7 +3,7 @@
 Control NAD C356BEE through RS232 from Home Assistant (HA) using ESPHome and a Wemos D1. The ESPhome configuration exposes the following entities to HA:
 
 - Power
-- Source (AUX, CD, ...)
+- Sources
 - Mute
 - Speaker A/B
 - Volume increment and decrement
@@ -21,7 +21,7 @@ The UART text sensor used for ESPHome is based on the description at [Custom UAR
 
 - MAX3232 RS232 Serial Port to TTL Conversion Module
 - Wemos D1
-- Null modem
+- Null modem cable
 
 ### Wiring
 
@@ -34,7 +34,8 @@ The UART text sensor used for ESPHome is based on the description at [Custom UAR
 
 ## C356BEE RS232 command list
 
-Set the baud rate to `115200` to properly send and receive serial data from C356BEE. 
+Set the baud rate to `115200` to properly send and receive serial data from C356BEE. A reference for these commands can be
+found on this [webpage](https://www.yumpu.com/en/document/read/35405103/c356-rs232-command-list-nad-electronics-main-lektropacks).
 
 | Command         | Operators | Possible values                     | Description                   | Example             |
 | --------------- | --------- | ----------------------------------- | ----------------------------- | ------------------- |
@@ -49,5 +50,10 @@ Set the baud rate to `115200` to properly send and receive serial data from C356
 
 ## 3D printed case
 
-The case and cover can be printed using a filament printer in order to store the electronics neatly. The design suited my
-needs in terms of size and used components.
+The case and cover can be printed using a filament printer in order to store the electronics neatly.
+
+## Useful insights
+
+Make sure to connect the Rx and Tx pins properly between the nodes that need to communicate. I had a problem with my amplifier and
+MAX3232 where I used a straight cable instead of a twisted/null cable, which caused the devices to not communicate with each other.
+It took me a long time to realize this mistake.
